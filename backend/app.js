@@ -13,7 +13,7 @@ var addBooks=require('./src/model/books');
 const path = require('path');
 app.use(express.static('./dist/frontend'));
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname+"/dist/frontend/index.html"));
+  res.sendFile(path.join(__dirname + '/dist/frontend/index.html'));
  });
 
 
