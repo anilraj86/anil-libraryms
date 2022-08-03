@@ -115,7 +115,7 @@ app.get('/api/booklist',function(req,res){
     //             .then(function(books){
     //                 res.send(books);
     //             });
-    res.send("Hello World");
+    return res.send("Hello World");
 });
 
 app.put('/api/updatebook',function(req,res){
