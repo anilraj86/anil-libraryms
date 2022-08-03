@@ -10,6 +10,14 @@ var Admindata=require('./src/model/admin');
 var Userdata=require('./src/model/user');
 var addBooks=require('./src/model/books');
 
+app.use ((req, res, next) =>{
+  res.header("Access-Control-Allow-Orgin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, POST, HEAD, OPTIONS, PATCH< DELETE" );
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+  
+});
+
 const path = require('path');
 app.use(express.static('./dist/frontend'));
 app.get('/*', function(req, res) {
@@ -103,11 +111,13 @@ app.post('/api/addbooks',(req,res)=>{
 });
 
 app.get('/api/booklist',function(req,res){
+
+  console.log("Book Display Entry");
     
-    addBooks.find()
-                .then(function(books){
-                    res.send(books);
-                });
+    // addBooks.find()
+    //             .then(function(books){
+    //                 res.send(books);
+    //             });
 });
 
 app.put('/api/updatebook',function(req,res){
