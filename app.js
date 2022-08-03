@@ -111,10 +111,11 @@ app.post('/api/addbooks',(req,res)=>{
 });
 
 app.get('/api/booklist',function(req,res){
-    addBooks.find()
-                .then(function(books){
-                    res.send(books);
-                });
+    // addBooks.find()
+    //             .then(function(books){
+    //                 res.send(books);
+    //             });
+    res.send("Hello World");
 });
 
 app.put('/api/updatebook',function(req,res){
