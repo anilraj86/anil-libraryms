@@ -112,8 +112,7 @@ app.post('/api/addbooks',(req,res)=>{
 
 app.get('/api/booklist',function(req,res){
 
-  console.log("Book Display Entry");
-    
+  res.send("Hello World");    
     // addBooks.find()
     //             .then(function(books){
     //                 res.send(books);
