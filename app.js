@@ -111,11 +111,12 @@ app.post('/api/addbooks',(req,res)=>{
 });
 
 app.get('/api/booklist',function(req,res){
-    // addBooks.find()
-    //             .then(function(books){
-    //                 res.send(books);
-    //             });
-    res.send("Hello World");
+
+    addBooks.find()
+                .then(function(books){
+                    res.send(books);
+                });
+    
 });
 
 app.put('/api/updatebook',function(req,res){
@@ -181,7 +182,7 @@ app.delete('/api/removeBooks/:id',(req,res)=>{
 
   
 
-app.listen(process.env.PORT||8080, function(){
+app.listen(process.env.PORT||3000, function(){
     console.log('listening to port 3000');
 });
 
