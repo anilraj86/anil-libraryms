@@ -107,7 +107,7 @@ app.post('/api/addbooks',(req,res)=>{
 
 app.get('/api/booklist',function(req,res){
 
-  console.log("Hello World");
+  console.log("Book List Call Api");
   addBooks.find()
                 .then(function(books){
                     res.send(books);
