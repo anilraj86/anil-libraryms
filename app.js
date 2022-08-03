@@ -19,11 +19,6 @@ app.use ((req, res, next) =>{
 });
 
 const path = require('path');
-app.use(express.static('./dist/frontend'));
-app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/frontend/index.html'));
- });
-
 
 app.get('/api/booklist/:id',  (req, res) => {
   
@@ -184,9 +179,12 @@ app.delete('/api/removeBooks/:id',(req,res)=>{
               
       })
 
-  
+      app.use(express.static('./dist/frontend'));
+      app.get('/*', function(req, res) {
+        res.sendFile(path.join(__dirname + '/dist/frontend/index.html'));
+       });  
 
-app.listen(process.env.PORT||3000, function(){
-    console.log('listening to port 3000');
+    app.listen(process.env.PORT||3000, function(){
+        console.log('listening to port 3000');
 });
 
