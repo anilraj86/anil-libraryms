@@ -113,8 +113,11 @@ app.post('/api/addbooks',(req,res)=>{
 app.get('/api/booklist',function(req,res){
 
     addBooks.find()
-                .then(function(books){
-                    res.send(books);
+                .then(function(res){
+                    return res.json();
+                })
+                .then(function(data){
+                  res.send(data);
                 });
     
 });
